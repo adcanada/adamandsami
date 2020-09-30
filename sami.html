@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="sami.css">
+    <title>Sami Tutorial</title>
+</head>
+<body>
+    <!--<h3>(n ^ 2) - 1</h3>--><br>
+    <p class="il">(</p>
+    <input type="number" id="input" onkeyup="timesTwoMinusOne()"><!--input for number-->
+    <p class="il"> ^ 2) - 1</p>
+    <br> 
+    <p id="note">Note: Large numbers may provide inaccurate results</p>
+    <p id="output" class="colortext"></p> <!--use this to output the result / change color-->
+
+    <button type="button" onclick="color('white')">White</button> <!--buttons that call the color() function-->
+    <button type="button" onclick="color('black')">Black</button>
+
+
+
+    <script>
+        document.getElementById("note").hidden = true; //hide the note by default
+
+        function timesTwoMinusOne() {
+            console.log(document.getElementById("input").value); //shows the current input in console
+
+            var inputNumber = document.getElementById("input").value; //gets input from text field
+            
+            if (inputNumber == '') { //if there's no input, display no output and hide the note
+                document.getElementById("note").hidden = true;
+                document.getElementById("output").innerHTML = '';
+                return;
+
+            } else if (inputNumber >= 1000000) { //if the number is big, show the note
+                document.getElementById("note").hidden = false;
+
+            } else { //else hide the note
+                document.getElementById("note").hidden = true;
+            }
+            
+            var outputNumber = ( Math.pow(inputNumber, 2) ) - 1; //this is the formula that changes the input
+            
+            document.getElementById("output").innerHTML = outputNumber; //output the changed number
+        }
+
+
+        function color(color) { document.querySelector(".colortext").style.color = color; }
+    </script>
+</body>
+</html>

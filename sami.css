@@ -1,0 +1,15 @@
+body { background-color: rgb(7, 71, 7); }
+
+* {
+    color: white;
+    text-align: center;
+}
+
+button, input { color: black; }
+
+input { text-align: left; }
+
+.il { 
+    display: inline; 
+    font-weight: bold;
+}
